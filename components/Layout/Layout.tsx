@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Navbar, { Flyout } from "../Navbar/Navbar";
 import s from "./Layout.module.scss";
 
@@ -14,6 +14,13 @@ export default function Layout({ children }: { children: ReactNode }) {
     document.body.style.overflowY = "auto";
     setFlyoutActive(false);
   };
+
+  useEffect(() => {
+    function handleResize() {
+      setFlyoutActive(false);
+    }
+    window.addEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className={s.layout}>
