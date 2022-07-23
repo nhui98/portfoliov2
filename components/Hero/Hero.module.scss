@@ -6,6 +6,7 @@
   align-items: flex-start;
   justify-content: center;
   min-height: 100vh;
+  width: 100%;
 
   .intro {
     color: v.$color-gold;
@@ -14,15 +15,16 @@
   }
 
   .name {
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 8vw, 5rem);
     color: v.$color-white;
     line-height: 1;
   }
 
   .title {
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 8vw, 5rem);
     color: #8892b0;
     line-height: 1;
+    margin-top: 0.5rem;
   }
 
   .about {

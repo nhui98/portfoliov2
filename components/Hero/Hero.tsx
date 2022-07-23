@@ -8,10 +8,8 @@ export default function Hero() {
   return (
     <section className={s.hero}>
       <h1 className={s.intro}>{intro}</h1>
-      <div className={s.heading}>
-        <h2 className={s.name}>{name}</h2>
-        <h3 className={s.title}>{subtitle}</h3>
-      </div>
+      <h2 className={s.name}>{name}</h2>
+      <h3 className={s.title}>{subtitle}</h3>
       <p className={s.about}>{about}</p>
       <Link href="/">
         <a className={s.resume}>Resume</a>
