@@ -22,13 +22,13 @@
 
   .title {
     font-size: clamp(2.5rem, 8vw, 5rem);
-    color: #8892b0;
+    color: v.$color-grey;
     line-height: 1;
     margin-top: 0.5rem;
   }
 
   .about {
-    color: #8892b0;
+    color: v.$color-grey;
     font-size: 1.25rem;
     max-width: 30rem;
     margin-top: 0.5rem;
