@@ -1,0 +1,7 @@
+@use "../variables" as v;
+
+.homepage {
+  background-color: v.$color-navy;
+  width: 100vw;
+  min-height: 100vh;
+}
