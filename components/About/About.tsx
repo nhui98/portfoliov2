@@ -1,6 +1,7 @@
 import s from "./About.module.scss";
 import { data } from "./data";
 import { TbCircleDotted } from "react-icons/tb";
+import SectionHeading from "../SectionHeading/SectionHeading";
 
 export default function About() {
   const { counter, title, description, skillDescription, skills } = data;
@@ -30,16 +31,3 @@ export default function About() {
     </section>
   );
 }
-
-interface SectionHeadingProps {
-  counter: string;
-  title: string;
-}
-
-export const SectionHeading = ({ counter, title }: SectionHeadingProps) => (
-  <h2 className={s.heading}>
-    <span className={s.counter}>{counter}</span>
-    <span className={s.title}>{title}</span>
-    <span className={s.line} />
-  </h2>
-);
