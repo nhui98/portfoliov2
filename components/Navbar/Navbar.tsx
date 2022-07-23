@@ -2,7 +2,6 @@ import Link from "next/link";
 import { links } from "./data";
 import s from "./Navbar.module.scss";
 import { IoCloseOutline } from "react-icons/io5";
-import { Dispatch, SetStateAction } from "react";
 
 interface NavbarProps {
   openFlyout: () => void;
@@ -14,9 +13,9 @@ export default function Navbar({ openFlyout }: NavbarProps) {
       <nav className={s.navbar}>
         <Links />
         <button className={s.hamburger} onClick={openFlyout}>
-          <div className={s.line} />
-          <div className={s.line} />
-          <div className={s.line} />
+          {new Array(3).fill(1).map((item, i) => (
+            <div className={s.line} key={i} />
+          ))}
         </button>
       </nav>
     </>
