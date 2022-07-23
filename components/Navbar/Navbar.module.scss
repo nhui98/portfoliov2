@@ -1,0 +1,33 @@
+@use "../../styles/variables" as v;
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 6rem;
+  z-index: 10;
+  background-color: v.$color-navy-8;
+
+  .links {
+    display: flex;
+    column-gap: 3rem;
+
+    .link {
+      font-family: "SFMono";
+      font-size: 0.875rem;
+      color: v.$color-white;
+      transition: color 0.5s;
+
+      &:hover {
+        color: v.$color-gold;
+      }
+
+      span {
+        color: v.$color-gold;
+        padding-right: 0.25rem;
+      }
+    }
+  }
+}
