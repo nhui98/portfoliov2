@@ -5,24 +5,103 @@
   justify-content: center;
   width: 100%;
 
-  .links {
-    display: flex;
-    column-gap: 3rem;
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    cursor: pointer;
+    padding: 1rem;
 
-    .link {
-      font-family: "SFMono";
-      font-size: 0.875rem;
-      color: v.$color-white;
-      transition: color 0.5s;
+    .line {
+      height: 1px;
+      border: 1px solid v.$color-gold;
 
-      &:hover {
-        color: v.$color-gold;
-      }
-
-      span {
-        color: v.$color-gold;
-        padding-right: 0.25rem;
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          width: calc(3rem - #{$i}rem / 2);
+        }
       }
     }
   }
+}
+
+.links {
+  display: flex;
+  column-gap: 3rem;
+  row-gap: 3rem;
+
+  .link {
+    font-size: 0.875rem;
+    color: v.$color-white;
+    transition: color 0.5s;
+
+    &:hover {
+      color: v.$color-gold;
+    }
+
+    span {
+      color: v.$color-gold;
+      padding-right: 0.25rem;
+    }
+  }
+}
+
+.flyout {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  max-width: 30rem;
+  width: 100%;
+  min-width: 300px;
+  z-index: 11;
+  background-color: v.$color-light-navy;
+  transition: left 0.5s;
+  left: -30rem;
+
+  &.active {
+    left: 0;
+  }
+
+  .links {
+    flex-direction: column;
+
+    .link {
+      font-size: 1.125rem;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3rem;
+    padding: 1rem;
+    cursor: pointer;
+    color: v.$color-gold;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-start;
+
+    .links {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  .flyout {
+    display: flex;
+  }
+}
+
+@media (max-width: 576px) {
 }
