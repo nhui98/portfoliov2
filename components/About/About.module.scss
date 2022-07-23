@@ -1,0 +1,118 @@
+@use "../../styles/variables" as v;
+
+.about {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 2rem;
+
+  .container {
+    display: flex;
+    column-gap: 3rem;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 60%;
+
+    p {
+      color: v.$color-grey;
+      font-size: 1.25rem;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(10rem, 15rem));
+      row-gap: 0.5rem;
+
+      .skill {
+        display: flex;
+        align-items: center;
+        color: v.$color-grey;
+        column-gap: 1rem;
+
+        svg {
+          font-size: 0.5rem;
+          color: v.$color-gold;
+        }
+      }
+    }
+  }
+
+  .right {
+    position: relative;
+
+    .wrapper {
+      position: relative;
+      width: 15rem;
+      z-index: 0;
+
+      .image {
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 5px;
+        }
+
+        &::before {
+          background-color: v.$color-gold;
+          z-index: 1;
+          opacity: 0.5;
+          transition: opacity 0.5s;
+        }
+
+        &::after {
+          border: 3px solid v.$color-gold;
+          z-index: -1;
+          transform: translate(1.5rem, 1.5rem);
+          transition: transform 0.5s;
+        }
+
+        &:hover {
+          &::before {
+            opacity: 0;
+          }
+
+          &::after {
+            transform: translate(1rem, 1rem);
+          }
+        }
+
+        img {
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+
+  .counter {
+    color: v.$color-gold;
+    font-family: "SFMono";
+    font-size: 1.25rem;
+  }
+
+  .title {
+    padding-top: 0.5rem;
+    font-size: 2rem;
+    color: v.$color-white;
+  }
+
+  .line {
+    height: 1px;
+    width: min(100%, 20rem);
+    border-bottom: 2px solid v.$color-light-navy;
+  }
+}
