@@ -1,19 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Navbar from "../components/Navbar/Navbar";
-import s from "../styles/pages/homepage.module.scss";
+import Hero from "../components/Hero/Hero";
+import s from "../styles/index.module.scss";
 
-const Home: NextPage = () => {
-  return (
-    <div className={s.homepage}>
-      <Head>
-        <title>Nathan H. | Portfolio</title>
-        <meta name="description" content="" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar />
-    </div>
-  );
-};
+const Home: NextPage = () => (
+  <div className={s.home}>
+    <Head>
+      <title>Nathan H. | Portfolio</title>
+      <meta name="description" content="cock" />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Hero />
+  </div>
+);
 
 export default Home;
