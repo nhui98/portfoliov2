@@ -5,7 +5,7 @@ import { data } from "./data";
 export default function Contact() {
   const { btnLink, btnText, counter, description, subtitle, title } = data;
   return (
-    <section className={s.contact}>
+    <section className={s.contact} id="contact">
       <h1 className={s.title}>
         <span className={s.counter}>{counter}</span>
         {title}
