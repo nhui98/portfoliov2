@@ -6,6 +6,7 @@
   align-items: center;
   position: relative;
   width: 100vw;
+  min-width: 300px;
   background-color: v.$color-navy;
 
   .header {
@@ -21,7 +22,7 @@
   }
 
   .content {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
 
