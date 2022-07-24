@@ -32,17 +32,21 @@ export const data = {
     {
       id: 2,
       productImage: "/images/project2img.png",
-      projectTitle: "Beats",
-      projectDescription: "Beats Landing page.",
-      projectStack: ["HTML", "CSS", "JavaScript"],
+      projectTitle: "Bramblecrest",
+      projectDescription:
+        "Ecommerce store selling high quality outdoor garden furniture.",
+      projectStack: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "JQuery",
+        "Bootstrap",
+        "VB .Net",
+      ],
       links: [
         {
-          icon: AiFillGithub,
-          link: "https://github.com/nhui98/beats-landing-page",
-        },
-        {
           icon: FiExternalLink,
-          link: "https://beats-landing-page-eight.vercel.app/",
+          link: "https://www.bramblecrest.com/",
         },
       ],
     },
