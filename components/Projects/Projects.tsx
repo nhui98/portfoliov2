@@ -1,8 +1,6 @@
 import SectionHeading from "../SectionHeading/SectionHeading";
 import s from "./Projects.module.scss";
 import { data } from "./data";
-import { FiExternalLink } from "react-icons/fi";
-import { AiFillGithub } from "react-icons/ai";
 import Link from "next/link";
 
 export default function Projects() {
