@@ -8,18 +8,27 @@
   .counter {
     color: v.$color-gold;
     font-family: "SFMono";
-    font-size: 1.25rem;
+    font-size: clamp(0.75rem, 4vw, 1.25rem);
   }
 
   .title {
     padding-top: 0.5rem;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 8vw, 2rem);
     color: v.$color-white;
   }
 
   .line {
     height: 1px;
-    width: min(100%, 20rem);
+    max-width: 20rem;
+    flex-grow: 2;
     border-bottom: 2px solid v.$color-light-navy;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    .line {
+      max-width: 100%;
+    }
   }
 }
