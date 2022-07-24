@@ -1,6 +1,13 @@
 import s from "./Hero.module.scss";
-import { data } from "./data";
 import Link from "next/link";
+
+const data = {
+  intro: "Hi, my name is",
+  name: "Nathan Hui.",
+  subtitle: "I build things for the web.",
+  about:
+    "I'm a Javascript developer focused on front-end technologies such as React to build incredible digital experiences for the web.",
+};
 
 export default function Hero() {
   const { intro, name, subtitle, about } = data;
