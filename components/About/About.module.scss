@@ -52,7 +52,6 @@
         z-index: 0;
 
         .image {
-          &::before,
           &::after {
             content: "";
             position: absolute;
@@ -63,13 +62,6 @@
             border-radius: 10px;
           }
 
-          &::before {
-            background-color: v.$color-gold;
-            z-index: 1;
-            opacity: 0.5;
-            transition: opacity 0.5s;
-          }
-
           &::after {
             border: 3px solid v.$color-gold;
             z-index: -1;
@@ -78,17 +70,9 @@
           }
 
           &:hover {
-            &::before {
-              opacity: 0;
-            }
-
             &::after {
               transform: translate(1rem, 1rem);
             }
-          }
-
-          img {
-            border-radius: 10px;
           }
         }
       }
@@ -116,4 +100,13 @@
 }
 
 @media (max-width: 576px) {
+  .about {
+    .container {
+      .left {
+        .skills {
+          grid-template-columns: repeat(1, minmax(10rem, 15rem));
+        }
+      }
+    }
+  }
 }

@@ -39,7 +39,7 @@ export default function About() {
         </div>
         <div className={s.right}>
           <div className={s.wrapper}>
-            <div className={s.image}>
+            <div className={`${s.image} golden-overlay`}>
               <img src="/images/me.jpg" alt="me" />
             </div>
           </div>
