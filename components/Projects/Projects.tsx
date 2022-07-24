@@ -1,8 +1,63 @@
 import SectionHeading from "../SectionHeading/SectionHeading";
 import s from "./Projects.module.scss";
-import { data } from "./data";
 import Link from "next/link";
 import { IconType } from "react-icons";
+import { FiExternalLink } from "react-icons/fi";
+import { AiFillGithub } from "react-icons/ai";
+
+export const data = {
+  counter: "03.",
+  title: "Projects",
+  projects: [
+    {
+      id: 1,
+      label: "Featured Project",
+      productImage: "/images/project1img.png",
+      projectTitle: "Thursday Boots",
+      projectDescription: "Ecommerce website selling high quality footwear.",
+      projectStack: [
+        "Next",
+        "Typescript",
+        "SASS Modules",
+        "Storybook",
+        "GraphQL",
+        "Mongoose",
+      ],
+      links: [
+        {
+          icon: AiFillGithub,
+          link: "https://thursdaybootsv2.vercel.app/",
+        },
+        {
+          icon: FiExternalLink,
+          link: "https://github.com/nhui98/thursdaybootsv2",
+        },
+      ],
+    },
+    {
+      id: 2,
+      label: "Featured Project",
+      productImage: "/images/project2img.png",
+      projectTitle: "Bramblecrest",
+      projectDescription:
+        "Ecommerce store selling premium outdoor garden furniture.",
+      projectStack: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "JQuery",
+        "Bootstrap",
+        "VB .Net",
+      ],
+      links: [
+        {
+          icon: FiExternalLink,
+          link: "https://www.bramblecrest.com/",
+        },
+      ],
+    },
+  ],
+};
 
 export default function Projects() {
   const { counter, title, projects } = data;
