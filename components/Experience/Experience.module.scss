@@ -1,0 +1,88 @@
+@use "../../styles/variables" as v;
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2rem;
+  min-height: 100vh;
+
+  .work {
+    display: flex;
+    column-gap: 2rem;
+
+    .companies {
+      display: flex;
+      flex-direction: column;
+
+      .company {
+        color: v.$color-grey;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border-left: 2px solid v.$color-grey;
+        transition: border-left 0.5s, color 0.5s;
+
+        &.active {
+          color: v.$color-gold;
+          border-left: 2px solid v.$color-gold;
+        }
+      }
+    }
+
+    .role {
+      position: relative;
+      margin: 0.75rem 1rem;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        opacity: 0;
+        transition: opacity 0.5s;
+        visibility: hidden;
+
+        &:not(&:first-child) {
+          position: absolute;
+          top: 0;
+        }
+
+        &.active {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .position {
+          color: v.$color-white;
+          line-height: 1;
+        }
+
+        .date {
+          color: v.$color-grey;
+          font-family: v.$font-sfmono;
+          font-size: 0.875rem;
+        }
+
+        .responsibilities {
+          display: flex;
+          flex-direction: column;
+          margin-top: 1rem;
+          row-gap: 0.5rem;
+
+          .responsibility {
+            display: flex;
+            column-gap: 2rem;
+            color: v.$color-grey;
+            font-family: v.$font-calibre;
+            font-size: 1.25rem;
+
+            span {
+              margin-top: 0.525rem;
+              color: v.$color-gold;
+              font-size: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
