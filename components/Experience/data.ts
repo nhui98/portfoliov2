@@ -18,7 +18,7 @@ export const data = {
       id: 2,
       company: "Opium Restuarant",
       position: "Bartender",
-      date: "june 2020 - September 2021",
+      date: "June 2020 - September 2021",
       responsibilities: [
         "Deliver constistent high quality customer service during peak hours contributing to positive customer feedback and reviews.",
         "Mentor and train new bar staff.",
