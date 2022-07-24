@@ -29,6 +29,16 @@ export const data = {
         "Mentor and train new bar staff.",
       ],
     },
+    {
+      id: 3,
+      company: "Opium Restuarant",
+      position: "Bartender",
+      date: "June 2020 - September 2021",
+      responsibilities: [
+        "Deliver constistent high quality customer service during peak hours contributing to positive customer feedback and reviews.",
+        "Mentor and train new bar staff.",
+      ],
+    },
   ],
 };
 
