@@ -1,0 +1,50 @@
+@use "../../styles/variables" as v;
+
+.contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+
+  .title {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: v.$color-gold;
+
+    .counter {
+      font-size: 0.875rem;
+      padding-right: 0.5rem;
+    }
+  }
+
+  .subtitle {
+    font-size: 3rem;
+    color: v.$color-white;
+  }
+
+  .description {
+    max-width: 30rem;
+    width: 100%;
+    text-align: center;
+    color: v.$color-grey;
+    font-size: 1.25rem;
+  }
+
+  .link {
+    font-family: v.$font-sfmono;
+    border: 1px solid v.$color-gold;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    color: v.$color-gold;
+    margin-top: 1rem;
+    transition: background-color 0.5s;
+
+    &:hover {
+      background-color: v.$color-gold-1;
+    }
+  }
+}
