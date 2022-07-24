@@ -17,7 +17,7 @@ const links = [
   },
   {
     id: 3,
-    counter: "04.",
+    counter: "03.",
     text: "Projects",
     href: "/#projects",
   },
