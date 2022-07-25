@@ -2,6 +2,7 @@ import SectionHeading from "../SectionHeading/SectionHeading";
 import s from "./Experience.module.scss";
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { TbCircleDotted } from "react-icons/tb";
+import { FadeSection } from "../../utils/FadeSection";
 
 export const data = {
   counter: "02.",
@@ -39,24 +40,26 @@ export default function Experience() {
   return (
     <section className={s.experience} id="experience">
       <SectionHeading counter={counter} title={title} />
-      <div className={s.work}>
-        <ul className={s.companies}>
-          {companies.map(({ id, company }) => (
-            <CompanyListItem
-              key={id}
-              id={id}
-              company={company}
-              active={active}
-              setActive={setActive}
-            />
-          ))}
-        </ul>
-        <div className={s.role}>
-          {companies.map((company) => (
-            <RoleItem active={active} {...company} key={company.id} />
-          ))}
+      <FadeSection direction="up">
+        <div className={s.work}>
+          <ul className={s.companies}>
+            {companies.map(({ id, company }) => (
+              <CompanyListItem
+                key={id}
+                id={id}
+                company={company}
+                active={active}
+                setActive={setActive}
+              />
+            ))}
+          </ul>
+          <div className={s.role}>
+            {companies.map((company) => (
+              <RoleItem active={active} {...company} key={company.id} />
+            ))}
+          </div>
         </div>
-      </div>
+      </FadeSection>
     </section>
   );
 }

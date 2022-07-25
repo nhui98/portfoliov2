@@ -1,6 +1,7 @@
 import s from "./About.module.scss";
 import { TbCircleDotted } from "react-icons/tb";
 import SectionHeading from "../SectionHeading/SectionHeading";
+import { FadeSection } from "../../utils/FadeSection";
 
 export const data = {
   counter: "01.",
@@ -27,22 +28,26 @@ export default function About() {
       <SectionHeading counter={counter} title={title} />
       <div className={s.container}>
         <div className={s.left}>
-          <p>{description}</p>
-          <p>{skillDescription}</p>
-          <ol className={s.skills}>
-            {skills.map((skill, i) => (
-              <li key={i} className={s.skill}>
-                <TbCircleDotted /> {skill}
-              </li>
-            ))}
-          </ol>
+          <FadeSection direction="right">
+            <p>{description}</p>
+            <p>{skillDescription}</p>
+            <ol className={s.skills}>
+              {skills.map((skill, i) => (
+                <li key={i} className={s.skill}>
+                  <TbCircleDotted /> {skill}
+                </li>
+              ))}
+            </ol>
+          </FadeSection>
         </div>
         <div className={s.right}>
-          <div className={s.wrapper}>
-            <div className={`${s.image} golden-overlay`}>
-              <img src="/images/me.jpg" alt="me" />
+          <FadeSection direction="left">
+            <div className={s.wrapper}>
+              <div className={`${s.image} golden-overlay`}>
+                <img src="/images/me.jpg" alt="me" />
+              </div>
             </div>
-          </div>
+          </FadeSection>
         </div>
       </div>
     </section>

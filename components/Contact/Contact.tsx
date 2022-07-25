@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FadeSection } from "../../utils/FadeSection";
 import s from "./Contact.module.scss";
 
 export const data = {
@@ -14,16 +15,18 @@ export const data = {
 export default function Contact() {
   const { btnLink, btnText, counter, description, subtitle, title } = data;
   return (
-    <section className={s.contact} id="contact">
-      <h1 className={s.title}>
-        <span className={s.counter}>{counter}</span>
-        {title}
-      </h1>
-      <h2 className={s.subtitle}>{subtitle}</h2>
-      <p className={s.description}>{description}</p>
-      <Link href={btnLink}>
-        <a className={s.link}>{btnText}</a>
-      </Link>
-    </section>
+    <FadeSection direction="up">
+      <section className={s.contact} id="contact">
+        <h1 className={s.title}>
+          <span className={s.counter}>{counter}</span>
+          {title}
+        </h1>
+        <h2 className={s.subtitle}>{subtitle}</h2>
+        <p className={s.description}>{description}</p>
+        <Link href={btnLink}>
+          <a className={s.link}>{btnText}</a>
+        </Link>
+      </section>
+    </FadeSection>
   );
 }

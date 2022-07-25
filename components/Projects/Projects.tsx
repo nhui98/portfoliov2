@@ -4,6 +4,7 @@ import Link from "next/link";
 import { IconType } from "react-icons";
 import { FiExternalLink } from "react-icons/fi";
 import { AiFillGithub } from "react-icons/ai";
+import { FadeSection } from "../../utils/FadeSection";
 
 export const data = {
   counter: "03.",
@@ -66,7 +67,9 @@ export default function Projects() {
     <section className={s.projects} id="projects">
       <SectionHeading counter={counter} title={title} />
       {projects.map((project) => (
-        <ProjectItem key={project.id} {...project} />
+        <FadeSection direction="up" key={project.id}>
+          <ProjectItem {...project} />
+        </FadeSection>
       ))}
     </section>
   );

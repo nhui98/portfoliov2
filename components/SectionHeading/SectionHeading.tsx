@@ -1,3 +1,4 @@
+import { FadeSection } from "../../utils/FadeSection";
 import s from "./SectionHeading.module.scss";
 
 interface SectionHeadingProps {
@@ -6,11 +7,13 @@ interface SectionHeadingProps {
 }
 
 const SectionHeading = ({ counter, title }: SectionHeadingProps) => (
-  <h2 className={s.heading}>
-    <span className={s.counter}>{counter}</span>
-    <span className={s.title}>{title}</span>
-    <span className={s.line} />
-  </h2>
+  <FadeSection direction="left">
+    <h2 className={s.heading}>
+      <span className={s.counter}>{counter}</span>
+      <span className={s.title}>{title}</span>
+      <span className={s.line} />
+    </h2>
+  </FadeSection>
 );
 
 export default SectionHeading;
