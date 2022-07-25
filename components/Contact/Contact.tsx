@@ -15,18 +15,26 @@ export const data = {
 export default function Contact() {
   const { btnLink, btnText, counter, description, subtitle, title } = data;
   return (
-    <FadeSection direction="up">
-      <section className={s.contact} id="contact">
+    <section className={s.contact} id="contact">
+      <FadeSection direction="up" delay=".25s">
         <h1 className={s.title}>
           <span className={s.counter}>{counter}</span>
           {title}
         </h1>
+      </FadeSection>
+      <FadeSection direction="up" delay=".5s">
         <h2 className={s.subtitle}>{subtitle}</h2>
+      </FadeSection>
+      <FadeSection direction="up" delay=".75s">
         <p className={s.description}>{description}</p>
-        <Link href={btnLink}>
-          <a className={s.link}>{btnText}</a>
-        </Link>
-      </section>
-    </FadeSection>
+      </FadeSection>
+      <FadeSection direction="up" delay="1s">
+        <div className={s.link}>
+          <Link href={btnLink}>
+            <a>{btnText}</a>
+          </Link>
+        </div>
+      </FadeSection>
+    </section>
   );
 }
