@@ -8,6 +8,7 @@
   width: 100vw;
   min-width: 300px;
   background-color: v.$color-navy;
+  overflow-x: hidden;
 
   .sidebar {
     display: flex;

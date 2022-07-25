@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AiFillLinkedin, AiOutlineMail, AiFillGithub } from "react-icons/ai";
+import { FadeSection } from "../../utils/FadeSection";
 import s from "./Sidebar.module.scss";
 
 export const data = [
@@ -22,18 +23,20 @@ export const data = [
 
 export default function Sidebar() {
   return (
-    <div className={s.sidebar}>
-      <div className={s.line} />
-      <div className={s.socials}>
-        {data.map(({ href, icon: Icon, id }) => (
-          <Link href={href} passHref key={id}>
-            <a className={s.social} target="_blank" rel="noopener noreferrer">
-              <Icon />
-            </a>
-          </Link>
-        ))}
+    <FadeSection>
+      <div className={s.sidebar}>
+        <div className={s.line} />
+        <div className={s.socials}>
+          {data.map(({ href, icon: Icon, id }) => (
+            <Link href={href} passHref key={id}>
+              <a className={s.social} target="_blank" rel="noopener noreferrer">
+                <Icon />
+              </a>
+            </Link>
+          ))}
+        </div>
+        <div className={s.line} />
       </div>
-      <div className={s.line} />
-    </div>
+    </FadeSection>
   );
 }
