@@ -22,13 +22,13 @@ export default function Contact() {
           {title}
         </h1>
       </FadeSection>
-      <FadeSection direction="up" delay=".5s">
+      <FadeSection direction="up" delay=".4s">
         <h2 className={s.subtitle}>{subtitle}</h2>
       </FadeSection>
-      <FadeSection direction="up" delay=".75s">
+      <FadeSection direction="up" delay=".55s">
         <p className={s.description}>{description}</p>
       </FadeSection>
-      <FadeSection direction="up" delay="1s">
+      <FadeSection direction="up" delay=".7s">
         <div className={s.link}>
           <Link href={btnLink}>
             <a>{btnText}</a>
