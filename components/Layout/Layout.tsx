@@ -1,5 +1,7 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
+import Footer from "../Footer/Footer";
 import Navbar, { Flyout } from "../Navbar/Navbar";
+import Sidebar from "../Sidebar/Sidebar";
 import s from "./Layout.module.scss";
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -32,6 +34,9 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div className={s.layout}>
       <Flyout flyoutActive={flyoutActive} closeFlyout={closeFlyout} />
+      <div className={s.sidebar}>
+        <Sidebar />
+      </div>
       <button
         className={`${s.overlay} ${flyoutActive && s.active}`}
         onClick={closeFlyout}
@@ -42,6 +47,9 @@ export default function Layout({ children }: { children: ReactNode }) {
       <main className={`${s.content} ${flyoutActive && s.active}`}>
         {children}
       </main>
+      <footer className={s.footer}>
+        <Footer />
+      </footer>
     </div>
   );
 }

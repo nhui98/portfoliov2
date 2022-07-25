@@ -9,6 +9,16 @@
   min-width: 300px;
   background-color: v.$color-navy;
 
+  .sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 7rem;
+  }
+
   .header {
     display: flex;
     justify-content: center;
@@ -48,6 +58,30 @@
     &.active {
       background-color: v.$color-navy-8;
       z-index: 1;
+    }
+  }
+
+  .footer {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .layout {
+    .sidebar {
+      width: 5rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    .sidebar {
+      display: none;
+    }
+
+    .footer {
+      display: flex;
     }
   }
 }
