@@ -1,0 +1,23 @@
+@use "../../styles/variables" as v;
+
+.footer {
+  width: 100%;
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    column-gap: 1.5rem;
+    padding: 3rem 0;
+
+    .social {
+      font-size: 1.5rem;
+      color: v.$color-grey;
+      transition: color 0.5s;
+
+      &:hover {
+        color: v.$color-gold;
+      }
+    }
+  }
+}
