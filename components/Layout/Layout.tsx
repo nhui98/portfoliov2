@@ -1,9 +1,10 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import Navbar, { Flyout } from "../Navbar/Navbar";
 import s from "./Layout.module.scss";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const [flyoutActive, setFlyoutActive] = useState(false);
+  const [navbarShow, setNavbarShow] = useState(true);
 
   const openFlyout = () => {
     document.body.style.overflowY = "hidden";
@@ -16,10 +17,16 @@ export default function Layout({ children }: { children: ReactNode }) {
   };
 
   useEffect(() => {
-    function handleResize() {
-      setFlyoutActive(false);
-    }
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", () => closeFlyout());
+
+    let prevScrollPosition = window.scrollY;
+    window.addEventListener("scroll", () => {
+      let currentScrollPosition = window.scrollY;
+      prevScrollPosition > currentScrollPosition
+        ? setNavbarShow(true)
+        : setNavbarShow(false);
+      prevScrollPosition = currentScrollPosition;
+    });
   }, []);
 
   return (
@@ -29,7 +36,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         className={`${s.overlay} ${flyoutActive && s.active}`}
         onClick={closeFlyout}
       />
-      <header className={s.header}>
+      <header className={`${s.header} ${!navbarShow && s.hide}`}>
         <Navbar openFlyout={openFlyout} />
       </header>
       <main className={`${s.content} ${flyoutActive && s.active}`}>

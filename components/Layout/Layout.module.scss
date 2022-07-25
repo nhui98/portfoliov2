@@ -19,6 +19,13 @@
     width: 100vw;
     height: 6rem;
     background-color: v.$color-navy-8;
+
+    transform: translateY(0);
+    transition: transform 0.5s;
+
+    &.hide {
+      transform: translateY(-6rem);
+    }
   }
 
   .content {
