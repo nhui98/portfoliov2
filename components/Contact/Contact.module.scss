@@ -21,8 +21,9 @@
   }
 
   .subtitle {
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 8vw, 3rem);
     color: v.$color-white;
+    text-align: center;
   }
 
   .description {

@@ -1,6 +1,15 @@
 import Link from "next/link";
 import s from "./Contact.module.scss";
-import { data } from "./data";
+
+export const data = {
+  counter: "04.",
+  title: "Contact me",
+  subtitle: "Lets get in touch",
+  description:
+    "Feel free to shoot me an email if you have any questions or just want to talk. Don't worry I wont bite :)",
+  btnText: "Message me",
+  btnLink: "mailto:hui.nathan9@gmail.com",
+};
 
 export default function Contact() {
   const { btnLink, btnText, counter, description, subtitle, title } = data;
