@@ -7,7 +7,7 @@ export const data = {
   title: "Contact me",
   subtitle: "Lets get in touch",
   description:
-    "Feel free to shoot me an email if you have any questions or just want to talk. Don't worry I wont bite :)",
+    "Feel free to send me an email if you have any questions or just want to talk!",
   btnText: "Message me",
   btnLink: "mailto:hui.nathan9@gmail.com",
 };
