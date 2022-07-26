@@ -2,6 +2,7 @@ import Link from "next/link";
 import s from "./Navbar.module.scss";
 import { IoCloseOutline } from "react-icons/io5";
 import { FadeSection } from "../../utils/FadeSection";
+import { useRouter } from "next/router";
 
 const links = [
   {
@@ -69,7 +70,7 @@ export const Flyout = ({ flyoutActive, closeFlyout }: FlyoutProps) => (
     </button>
     <ol className={s.links}>
       {links.map((link) => (
-        <NavLink {...link} key={link.id} />
+        <NavLink {...link} closeFlyout={closeFlyout} key={link.id} />
       ))}
     </ol>
   </aside>
@@ -80,17 +81,24 @@ interface NavlinkProps {
   counter: string;
   href: string;
   text: string;
+  closeFlyout?: FlyoutProps["closeFlyout"];
 }
 
-const NavLink = ({ counter, href, text }: NavlinkProps) => (
-  <li className={s.link}>
-    <Link href={href}>
-      <a>
+const NavLink = ({ counter, href, text, closeFlyout }: NavlinkProps) => {
+  const router = useRouter();
+  return (
+    <button
+      onClick={() => {
+        closeFlyout && closeFlyout();
+        router.push(href);
+      }}
+    >
+      <li className={s.link}>
         <span>{counter}</span>
         {text}
-      </a>
-    </Link>
-  </li>
-);
+      </li>
+    </button>
+  );
+};
 
 export default Navbar;
