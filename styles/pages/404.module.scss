@@ -1,0 +1,35 @@
+@use "../variables" as v;
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  row-gap: 1.5rem;
+
+  .error {
+    color: v.$color-gold;
+    font-size: clamp(8rem, 12vw, 16rem);
+    line-height: 1;
+  }
+
+  .message {
+    color: v.$color-grey;
+    line-height: 1;
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .button {
+    color: v.$color-gold;
+    border: 1px solid v.$color-gold;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+    margin-top: 2rem;
+
+    &:hover {
+      background-color: v.$color-gold-1;
+    }
+  }
+}

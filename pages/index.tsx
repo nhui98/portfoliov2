@@ -5,15 +5,15 @@ import Contact from "../components/Contact/Contact";
 import Experience from "../components/Experience/Experience";
 import Hero from "../components/Hero/Hero";
 import Projects from "../components/Projects/Projects";
-import s from "../styles/index.module.scss";
+import s from "../styles/pages/index.module.scss";
 import { FadeSection } from "../utils/FadeSection";
 
 const Home: NextPage = () => (
   <div className={s.home}>
     <Head>
-      <title>Nathan H. | Portfolio</title>
-      <meta name="description" content="cock" />
-      <link rel="icon" href="/favicon.ico" />
+      <title>Portfolio | Nathan H. </title>
+      <meta name="description" content="portfolio website" />
+      <link rel="icon" href="icons/favicon.ico" />
     </Head>
 
     <FadeSection direction="up">
