@@ -8,7 +8,7 @@ const data = {
   about:
     "I focus on front-end technologies and frameworks such as JavaScript and React to build incredible digital experiences for the web.",
   resumeText: "Resume",
-  resumeLink: "/resume.pdf",
+  resumeLink: "/documents/resume.pdf",
 };
 
 export default function Hero() {
