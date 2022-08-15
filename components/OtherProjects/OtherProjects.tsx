@@ -2,6 +2,7 @@ import s from "./OtherProjects.module.scss";
 import { FiExternalLink } from "react-icons/fi";
 import { AiFillGithub, AiOutlineFolderOpen } from "react-icons/ai";
 import Link from "next/link";
+import { FadeSection } from "../../utils/FadeSection";
 
 const projects = [
   {
@@ -61,13 +62,15 @@ const ProjectCard = ({
 
 export default function OtherProjects() {
   return (
-    <section className={s.otherProjects}>
-      <h2 className={s.heading}>More Projects</h2>
-      <div className={s.grid}>
-        {projects.map((project) => (
-          <ProjectCard key={project.id} {...project} />
-        ))}
-      </div>
-    </section>
+    <FadeSection direction="up">
+      <section className={s.otherProjects}>
+        <h2 className={s.heading}>More Projects</h2>
+        <div className={s.grid}>
+          {projects.map((project) => (
+            <ProjectCard key={project.id} {...project} />
+          ))}
+        </div>
+      </section>
+    </FadeSection>
   );
 }
