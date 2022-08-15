@@ -4,6 +4,7 @@ import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import Experience from "../components/Experience/Experience";
 import Hero from "../components/Hero/Hero";
+import OtherProjects from "../components/OtherProjects/OtherProjects";
 import Projects from "../components/Projects/Projects";
 import s from "../styles/pages/index.module.scss";
 import { FadeSection } from "../utils/FadeSection";
@@ -25,6 +26,8 @@ const Home: NextPage = () => (
     <Experience />
 
     <Projects />
+
+    <OtherProjects />
 
     <Contact />
   </div>
