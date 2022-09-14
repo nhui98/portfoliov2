@@ -3,17 +3,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { AiFillGithub, AiOutlineFolderOpen } from "react-icons/ai";
 import Link from "next/link";
 import { FadeSection } from "../../utils/FadeSection";
-
-const projects = [
-  {
-    id: 1,
-    title: "HooBank",
-    description: "Landing page for a digital payment system.",
-    stack: ["Vite", "React", "Typescript", "Tailwind", "Storybook"],
-    github: "https://github.com/nhui98/HooBank",
-    website: "https://hoo-bank-coral.vercel.app/",
-  },
-];
+import { projects } from "./OtherProjects.data";
 
 interface ProjectCardProps {
   title: string;

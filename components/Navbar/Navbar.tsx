@@ -3,37 +3,7 @@ import s from "./Navbar.module.scss";
 import { IoCloseOutline } from "react-icons/io5";
 import { FadeSection } from "../../utils/FadeSection";
 import { useRouter } from "next/router";
-
-const links = [
-  {
-    id: 1,
-    counter: "01.",
-    text: "About",
-    href: "/#about",
-    fadeDelay: ".25s",
-  },
-  {
-    id: 2,
-    counter: "02.",
-    text: "Experience",
-    href: "/#experience",
-    fadeDelay: ".5s",
-  },
-  {
-    id: 3,
-    counter: "03.",
-    text: "Projects",
-    href: "/#projects",
-    fadeDelay: ".75s",
-  },
-  {
-    id: 4,
-    counter: "04.",
-    text: "Contact",
-    href: "/#contact",
-    fadeDelay: "1s",
-  },
-];
+import { links } from "./Navbar.data";
 
 interface NavbarProps {
   openFlyout: () => void;

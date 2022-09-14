@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { data as socialData } from "../Sidebar/Sidebar";
 import s from "./Footer.module.scss";
+import { data as socialData } from "../Sidebar/Sidebar.data";
 
 export default function Footer() {
   return (
