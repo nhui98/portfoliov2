@@ -115,7 +115,7 @@ export const PROJECTS = [
   {
     id: 2,
     label: "Featured Project",
-    productImage: "/images/project3img.png",
+    productImage: "/images/project2img.png",
     projectTitle: "Netflix Clone",
     projectDescription:
       "Netflix Landing page with authentication and Stripe payments.",
@@ -142,7 +142,7 @@ export const PROJECTS = [
   {
     id: 3,
     label: "Featured Project",
-    productImage: "/images/project2img.png",
+    productImage: "/images/project3img.png",
     projectTitle: "Bramblecrest",
     projectDescription:
       "Ecommerce store selling premium outdoor garden furniture.",
