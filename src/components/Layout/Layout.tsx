@@ -1,12 +1,13 @@
 import Flyout from "@components/Common/Flyout/Flyout";
 import Footer from "@components/Common/Footer/Footer";
+import { NextPage } from "next";
 import { ReactNode, useEffect, useState } from "react";
 
 import Navbar from "../Common/Navbar/Navbar";
 import Sidebar from "../Common/Sidebar/Sidebar";
 import s from "./Layout.module.scss";
 
-export default function Layout({ children }: { children: ReactNode }) {
+const Layout: NextPage<LayoutProps> = ({ children }) => {
   const [flyoutActive, setFlyoutActive] = useState(false);
   const [navbarShow, setNavbarShow] = useState(true);
 
@@ -54,4 +55,10 @@ export default function Layout({ children }: { children: ReactNode }) {
       </footer>
     </div>
   );
+};
+
+export default Layout;
+
+interface LayoutProps {
+  children: ReactNode;
 }
