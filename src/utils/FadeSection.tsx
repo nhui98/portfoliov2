@@ -1,17 +1,11 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { NextPage } from "next";
+import { ReactNode, useEffect, useRef } from "react";
 
-interface FadeSectionProps {
-  children: ReactNode;
-  direction?: string;
-  delay?: string;
-}
-
-export const FadeSection = ({
+const FadeSection: NextPage<FadeSectionProps> = ({
   children,
   direction,
   delay,
-}: FadeSectionProps) => {
-  const [isVisible, setVisible] = useState(false);
+}) => {
   const domRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,8 +21,7 @@ export const FadeSection = ({
       },
       {
         threshold: 0.5,
-        rootMargin: "0px", //change container size
-        //root: //set the parent container
+        rootMargin: "0px",
       }
     );
 
@@ -49,3 +42,11 @@ export const FadeSection = ({
     </div>
   );
 };
+
+export default FadeSection;
+
+interface FadeSectionProps {
+  children: ReactNode;
+  direction?: string;
+  delay?: string;
+}
