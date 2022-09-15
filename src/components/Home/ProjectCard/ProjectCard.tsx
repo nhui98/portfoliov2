@@ -12,39 +12,38 @@ const ProjectCard: NextPage<ProjectCardProps> = ({
   title,
   website,
 }) => (
-  <Link href={website} passHref>
-    <a target="_blank" rel="noopener noreferrer" className={s.projectCard}>
-      <div className={s.heading}>
-        <div className={s.left}>
-          <AiOutlineFolderOpen />
-        </div>
-        <div className={s.right}>
-          <Link href={github} passHref>
-            <a className={s.link} target="_blank" rel="noopener noreferrer">
-              <AiFillGithub />
-            </a>
-          </Link>
-          <Link href={website} passHref>
-            <a className={s.link} target="_blank" rel="noopener noreferrer">
-              <FiExternalLink />
-            </a>
-          </Link>
-        </div>
+  <div className={s.projectCard}>
+    <div className={s.heading}>
+      <div className={s.left}>
+        <AiOutlineFolderOpen />
       </div>
-      <h2 className={s.title}>{title}</h2>
-      <p className={s.description}>{description}</p>
-      <ul className={s.stack}>
-        {stack.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </a>
-  </Link>
+      <div className={s.right}>
+        <Link href={github} passHref>
+          <a className={s.link} target="_blank" rel="noreferrer">
+            <AiFillGithub />
+          </a>
+        </Link>
+        <Link href={website} passHref>
+          <a className={s.link} target="_blank" rel="noreferrer">
+            <FiExternalLink />
+          </a>
+        </Link>
+      </div>
+    </div>
+    <h2 className={s.title}>{title}</h2>
+    <p className={s.description}>{description}</p>
+    <ul className={s.stack}>
+      {stack.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  </div>
 );
 
 export default ProjectCard;
 
 interface ProjectCardProps {
+  id: number;
   title: string;
   description: string;
   github: string;
