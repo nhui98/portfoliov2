@@ -8,6 +8,7 @@
     "plugin:@typescript-eslint/recommended",
     "next",
     "next/core-web-vitals",
+    "plugin:storybook/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
