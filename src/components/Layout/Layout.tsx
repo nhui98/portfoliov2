@@ -1,7 +1,9 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
-import Footer from "../Footer/Footer";
-import Navbar, { Flyout } from "../Navbar/Navbar";
-import Sidebar from "../Sidebar/Sidebar";
+import Flyout from "@components/Common/Flyout/Flyout";
+import Footer from "@components/Common/Footer/Footer";
+import { ReactNode, useEffect, useState } from "react";
+
+import Navbar from "../Common/Navbar/Navbar";
+import Sidebar from "../Common/Sidebar/Sidebar";
 import s from "./Layout.module.scss";
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -23,7 +25,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
     let prevScrollPosition = window.scrollY;
     window.addEventListener("scroll", () => {
-      let currentScrollPosition = window.scrollY;
+      const currentScrollPosition = window.scrollY;
       prevScrollPosition > currentScrollPosition
         ? setNavbarShow(true)
         : setNavbarShow(false);
