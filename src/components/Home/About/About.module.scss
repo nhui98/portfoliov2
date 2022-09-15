@@ -1,4 +1,4 @@
-@use "../../styles/variables" as v;
+@use "../../../styles/variables" as v;
 
 .about {
   display: flex;
@@ -27,6 +27,7 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(10rem, 15rem));
         row-gap: 0.5rem;
+        margin-top: 1rem;
 
         .skill {
           display: flex;

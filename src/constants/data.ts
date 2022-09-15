@@ -48,3 +48,14 @@ export const SOCIAL_LINKS = [
     href: "https://github.com/nhui98",
   },
 ];
+
+export const SKILLS = [
+  "JavaScript (ES6+)",
+  "Typescript",
+  "SASS",
+  "Tailwind",
+  "React",
+  "Next",
+  "GraphQL",
+  "Storybook",
+];
