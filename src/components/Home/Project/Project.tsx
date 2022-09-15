@@ -1,39 +1,10 @@
-import SectionHeading from "../SectionHeading/SectionHeading";
-import s from "./Projects.module.scss";
+import { NextPage } from "next";
 import Link from "next/link";
 import { IconType } from "react-icons";
-import { FadeSection } from "../../utils/FadeSection";
-import { data } from "./Project.data";
 
-export default function Projects() {
-  const { counter, title, projects } = data;
+import s from "./Project.module.scss";
 
-  return (
-    <section className={s.projects} id="projects">
-      <SectionHeading counter={counter} title={title} />
-      {projects.map((project) => (
-        <FadeSection direction="up" key={project.id}>
-          <ProjectItem {...project} />
-        </FadeSection>
-      ))}
-    </section>
-  );
-}
-
-interface ProjectItemProps {
-  id: number;
-  label: string;
-  productImage: string;
-  projectTitle: string;
-  projectDescription: string;
-  projectStack: string[];
-  links: {
-    icon: IconType;
-    link: string;
-  }[];
-}
-
-const ProjectItem = ({
+const Project: NextPage<ProjectProps> = ({
   id,
   label,
   productImage,
@@ -41,7 +12,7 @@ const ProjectItem = ({
   projectDescription,
   projectStack,
   links,
-}: ProjectItemProps) => {
+}) => {
   const altClass = id % 2 === 0 && s.alt;
 
   return (
@@ -75,3 +46,18 @@ const ProjectItem = ({
     </div>
   );
 };
+
+export default Project;
+
+interface ProjectProps {
+  id: number;
+  label: string;
+  productImage: string;
+  projectTitle: string;
+  projectDescription: string;
+  projectStack: string[];
+  links: {
+    icon: IconType;
+    link: string;
+  }[];
+}

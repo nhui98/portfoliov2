@@ -1,11 +1,4 @@
-@use "../../styles/variables" as v;
-
-.projects {
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
-  min-height: 100vh;
-}
+@use "../../../styles/variables" as v;
 
 .project {
   display: grid;
