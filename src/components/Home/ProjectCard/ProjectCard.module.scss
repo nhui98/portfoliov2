@@ -1,26 +1,6 @@
-@use "../../styles/variables" as v;
+@use "../../../styles/variables" as v;
 
-.otherProjects {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  row-gap: 2rem;
-  min-height: 100vh;
-
-  .heading {
-    text-align: center;
-    color: v.$color-white;
-    font-size: clamp(1.5rem, 8vw, 2rem);
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-}
-
-.item {
+.projectCard {
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
@@ -84,21 +64,5 @@
     flex-wrap: wrap;
     color: v.$color-grey;
     margin-bottom: 0.5rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  .otherProjects {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-}
-
-@media (max-width: 650px) {
-  .otherProjects {
-    .grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
   }
 }

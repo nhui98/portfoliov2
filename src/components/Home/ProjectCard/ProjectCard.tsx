@@ -1,27 +1,19 @@
-import s from "./OtherProjects.module.scss";
-import { FiExternalLink } from "react-icons/fi";
-import { AiFillGithub, AiOutlineFolderOpen } from "react-icons/ai";
+import { NextPage } from "next";
 import Link from "next/link";
-import { FadeSection } from "../../utils/FadeSection";
-import { projects } from "./OtherProjects.data";
+import { AiFillGithub, AiOutlineFolderOpen } from "react-icons/ai";
+import { FiExternalLink } from "react-icons/fi";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  github: string;
-  website: string;
-  stack: string[];
-}
+import s from "./ProjectCard.module.scss";
 
-const ProjectCard = ({
+const ProjectCard: NextPage<ProjectCardProps> = ({
   description,
   github,
   stack,
   title,
   website,
-}: ProjectCardProps) => (
+}) => (
   <Link href={website} passHref>
-    <a target="_blank" rel="noopener noreferrer" className={s.item}>
+    <a target="_blank" rel="noopener noreferrer" className={s.projectCard}>
       <div className={s.heading}>
         <div className={s.left}>
           <AiOutlineFolderOpen />
@@ -50,17 +42,12 @@ const ProjectCard = ({
   </Link>
 );
 
-export default function OtherProjects() {
-  return (
-    <FadeSection direction="up">
-      <section className={s.otherProjects}>
-        <h2 className={s.heading}>More Projects</h2>
-        <div className={s.grid}>
-          {projects.map((project) => (
-            <ProjectCard key={project.id} {...project} />
-          ))}
-        </div>
-      </section>
-    </FadeSection>
-  );
+export default ProjectCard;
+
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  github: string;
+  website: string;
+  stack: string[];
 }
