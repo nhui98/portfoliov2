@@ -1,4 +1,5 @@
 @use "../../../styles/variables" as v;
+@use "../../../styles/mixins" as m;
 
 .heading {
   display: flex;
@@ -22,12 +23,8 @@
     max-width: 20rem;
     flex-grow: 2;
     border-bottom: 2px solid v.$color-light-navy;
-  }
-}
 
-@media (max-width: 768px) {
-  .heading {
-    .line {
+    @include m.md {
       max-width: 100%;
     }
   }

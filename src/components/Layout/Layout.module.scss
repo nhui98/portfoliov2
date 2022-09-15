@@ -1,4 +1,5 @@
 @use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
 
 .layout {
   display: flex;
@@ -18,6 +19,14 @@
     position: fixed;
     left: 0;
     width: 7rem;
+
+    @include m.lg {
+      width: 5rem;
+    }
+
+    @include m.md {
+      display: none;
+    }
   }
 
   .header {
@@ -64,24 +73,8 @@
 
   .footer {
     display: none;
-  }
-}
 
-@media (max-width: 992px) {
-  .layout {
-    .sidebar {
-      width: 5rem;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .layout {
-    .sidebar {
-      display: none;
-    }
-
-    .footer {
+    @include m.md {
       display: flex;
     }
   }

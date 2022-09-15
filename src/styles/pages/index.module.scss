@@ -1,3 +1,5 @@
+@use "../mixins" as m;
+
 .home {
   display: flex;
   flex-direction: column;
@@ -5,22 +7,12 @@
   max-width: 75rem;
   width: 100%;
   padding: 0 8rem;
-}
 
-@media (max-width: 992px) {
-  .home {
+  @include m.lg {
     padding: 0 6rem;
   }
-}
 
-@media (max-width: 768px) {
-  .home {
+  @include m.md {
     padding: 0 2rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .home {
-    row-gap: 5rem;
   }
 }

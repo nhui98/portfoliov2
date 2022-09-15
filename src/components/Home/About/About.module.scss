@@ -1,4 +1,5 @@
 @use "../../../styles/variables" as v;
+@use "../../../styles/mixins" as m;
 
 .about {
   display: flex;
@@ -12,11 +13,19 @@
     display: flex;
     column-gap: 3rem;
 
+    @include m.md {
+      flex-direction: column;
+    }
+
     .left {
       display: flex;
       flex-direction: column;
       row-gap: 1rem;
       width: 60%;
+
+      @include m.md {
+        width: 100%;
+      }
 
       p {
         color: v.$color-grey;
@@ -28,6 +37,10 @@
         grid-template-columns: repeat(2, minmax(10rem, 15rem));
         row-gap: 0.5rem;
         margin-top: 1rem;
+
+        @include m.sm {
+          grid-template-columns: repeat(1, minmax(10rem, 15rem));
+        }
 
         .skill {
           display: flex;
@@ -46,6 +59,13 @@
     .right {
       position: relative;
       width: 40%;
+
+      @include m.md {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 5rem 0;
+      }
 
       .wrapper {
         position: relative;
@@ -75,37 +95,6 @@
               transform: translate(1rem, 1rem);
             }
           }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .about {
-    .container {
-      flex-direction: column;
-
-      .left {
-        width: 100%;
-      }
-
-      .right {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin: 3rem 0;
-      }
-    }
-  }
-}
-
-@media (max-width: 576px) {
-  .about {
-    .container {
-      .left {
-        .skills {
-          grid-template-columns: repeat(1, minmax(10rem, 15rem));
         }
       }
     }
