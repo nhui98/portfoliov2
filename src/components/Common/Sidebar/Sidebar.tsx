@@ -1,6 +1,7 @@
+import { SOCIAL_LINKS } from "@constants/data";
 import Link from "next/link";
-import { FadeSection } from "../../utils/FadeSection";
-import { data } from "./Sidebar.data";
+
+import FadeSection from "../../../utils/FadeSection";
 import s from "./Sidebar.module.scss";
 
 export default function Sidebar() {
@@ -9,7 +10,7 @@ export default function Sidebar() {
       <div className={s.sidebar}>
         <div className={s.line} />
         <div className={s.socials}>
-          {data.map(({ href, icon: Icon, id }) => (
+          {SOCIAL_LINKS.map(({ href, icon: Icon, id }) => (
             <Link href={href} passHref key={id}>
               <a className={s.social} target="_blank" rel="noopener noreferrer">
                 <Icon />
