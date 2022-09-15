@@ -1,0 +1,46 @@
+@use "../../../styles/variables" as v;
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  .links {
+    display: flex;
+    column-gap: 3rem;
+    row-gap: 3rem;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    cursor: pointer;
+    padding: 1rem;
+
+    .line {
+      height: 1px;
+      border: 1px solid v.$color-gold;
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          width: calc(3rem - #{$i}rem / 2);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-start;
+
+    .links {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+}

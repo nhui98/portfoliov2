@@ -1,0 +1,44 @@
+@use "../../../styles/variables" as v;
+
+.flyout {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  max-width: 30rem;
+  width: 100%;
+  min-width: 300px;
+  z-index: 11;
+  background-color: v.$color-light-navy;
+  transition: left 0.5s;
+  left: -30rem;
+
+  &.active {
+    left: 0;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    column-gap: 3rem;
+    row-gap: 3rem;
+  }
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3rem;
+    padding: 1rem;
+    cursor: pointer;
+    color: v.$color-gold;
+  }
+}
+
+@media (max-width: 768px) {
+  .flyout {
+    display: flex;
+  }
+}
