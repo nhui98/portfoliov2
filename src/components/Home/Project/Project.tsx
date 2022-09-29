@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { IconType } from "react-icons";
 
@@ -18,7 +19,7 @@ const Project: NextPage<ProjectProps> = ({
   return (
     <div className={s.project}>
       <div className={`${s.image} ${altClass} golden-overlay`}>
-        <img src={productImage} alt={projectTitle} />
+        <Image layout="fill" src={productImage} alt={projectTitle} />
       </div>
       <div className={`${s.details} ${altClass}`}>
         <h1 className={s.label}>{label}</h1>

@@ -5,6 +5,11 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   margin-bottom: 5rem;
+  min-height: 20rem;
+
+  @include m.lg {
+    min-height: 15rem;
+  }
 
   @include m.md {
     box-shadow: 0 10px 30px -15px v.$color-navy-shadow;
