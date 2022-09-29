@@ -1,5 +1,6 @@
 import Flyout from "@components/Common/Flyout/Flyout";
 import Footer from "@components/Common/Footer/Footer";
+import useApp from "@hooks/useApp";
 import { NextPage } from "next";
 import { ReactNode, useEffect, useState } from "react";
 
@@ -8,18 +9,8 @@ import Sidebar from "../Common/Sidebar/Sidebar";
 import s from "./Layout.module.scss";
 
 const Layout: NextPage<LayoutProps> = ({ children }) => {
-  const [flyoutActive, setFlyoutActive] = useState(false);
   const [navbarShow, setNavbarShow] = useState(true);
-
-  const openFlyout = () => {
-    document.body.style.overflowY = "hidden";
-    setFlyoutActive(true);
-  };
-
-  const closeFlyout = () => {
-    document.body.style.overflowY = "auto";
-    setFlyoutActive(false);
-  };
+  const { closeFlyout, flyoutActive, openFlyout } = useApp();
 
   useEffect(() => {
     window.addEventListener("resize", () => closeFlyout());
@@ -32,7 +23,7 @@ const Layout: NextPage<LayoutProps> = ({ children }) => {
         : setNavbarShow(false);
       prevScrollPosition = currentScrollPosition;
     });
-  }, []);
+  }, [closeFlyout]);
 
   return (
     <div className={s.layout}>
