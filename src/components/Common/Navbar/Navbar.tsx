@@ -24,6 +24,6 @@ const Navbar: NextPage<NavbarProps> = ({ openFlyout }) => (
 
 export default Navbar;
 
-interface NavbarProps {
+export interface NavbarProps {
   openFlyout: () => void;
 }
