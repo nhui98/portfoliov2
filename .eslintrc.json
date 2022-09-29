@@ -2,13 +2,15 @@
   "root": true,
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true,
+    "jest": true
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "next",
     "next/core-web-vitals",
-    "plugin:storybook/recommended",
+    "plugin:jest-dom/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -19,7 +21,21 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "simple-import-sort", "prettier"],
+  "plugins": [
+    "@typescript-eslint",
+    "simple-import-sort",
+    "testing-library",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ],
   "rules": {
     "@next/next/no-img-element": "off",
     "simple-import-sort/imports": "error",
