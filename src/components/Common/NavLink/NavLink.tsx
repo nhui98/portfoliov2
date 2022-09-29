@@ -17,18 +17,18 @@ const NavLink: NextPage<NavlinkProps> = ({
   };
 
   return (
-    <button onClick={handleCloseFlyout}>
-      <li className={s.link}>
+    <li>
+      <button className={s.link} onClick={handleCloseFlyout}>
         <span>{counter}</span>
         {text}
-      </li>
-    </button>
+      </button>
+    </li>
   );
 };
 
 export default NavLink;
 
-interface NavlinkProps {
+export interface NavlinkProps {
   id: number;
   counter: string;
   href: string;
