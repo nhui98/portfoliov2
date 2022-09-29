@@ -6,7 +6,7 @@ import NavLink from "../NavLink/NavLink";
 import s from "./Flyout.module.scss";
 
 const Flyout: NextPage<FlyoutProps> = ({ flyoutActive, closeFlyout }) => (
-  <aside className={`${s.flyout} ${flyoutActive && s.active}`}>
+  <nav className={`${s.flyout} ${flyoutActive && s.active}`}>
     <button className={s.close} onClick={closeFlyout}>
       <IoCloseOutline />
     </button>
@@ -15,12 +15,12 @@ const Flyout: NextPage<FlyoutProps> = ({ flyoutActive, closeFlyout }) => (
         <NavLink {...link} closeFlyout={closeFlyout} key={link.id} />
       ))}
     </ol>
-  </aside>
+  </nav>
 );
 
 export default Flyout;
 
-interface FlyoutProps {
+export interface FlyoutProps {
   flyoutActive: boolean;
   closeFlyout: () => void;
 }
