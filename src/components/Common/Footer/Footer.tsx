@@ -5,15 +5,17 @@ import s from "./Footer.module.scss";
 
 const Footer = () => (
   <footer className={s.footer}>
-    <div className={s.socials}>
-      {SOCIAL_LINKS.map(({ href, icon: Icon, id }) => (
-        <Link href={href} passHref key={id}>
-          <a className={s.social} target="_blank">
-            <Icon />
-          </a>
-        </Link>
+    <ul className={s.socials}>
+      {SOCIAL_LINKS.map(({ href, icon: Icon, id, label }) => (
+        <li className={s.social} key={id}>
+          <Link href={href} passHref>
+            <a target="_blank" rel="noopener noreferrer" aria-label={label}>
+              <Icon />
+            </a>
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
   </footer>
 );
 

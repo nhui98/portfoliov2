@@ -1,18 +1,18 @@
 import { SOCIAL_LINKS } from "@constants/data";
 import { render, screen } from "@testing-library/react";
 
-import Sidebar from "./Sidebar";
+import Footer from "./Footer";
 
-describe("Sidebar", () => {
+describe("Footer", () => {
   it("contains the correct number of social links", () => {
-    render(<Sidebar />);
+    render(<Footer />);
 
     const links = screen.getAllByRole("listitem");
     expect(links).toHaveLength(SOCIAL_LINKS.length);
   });
 
   it("has correct linkedin url", () => {
-    render(<Sidebar />);
+    render(<Footer />);
 
     expect(
       screen.getByRole("link", {
@@ -22,7 +22,7 @@ describe("Sidebar", () => {
   });
 
   it("has correct mail url", () => {
-    render(<Sidebar />);
+    render(<Footer />);
 
     expect(
       screen.getByRole("link", {
@@ -32,7 +32,7 @@ describe("Sidebar", () => {
   });
 
   it("has correct linkedin url", () => {
-    render(<Sidebar />);
+    render(<Footer />);
 
     expect(
       screen.getByRole("link", {
