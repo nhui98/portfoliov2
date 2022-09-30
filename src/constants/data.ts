@@ -37,16 +37,19 @@ export const SOCIAL_LINKS = [
     id: 1,
     icon: AiFillLinkedin,
     href: "https://www.linkedin.com/in/nathan-hui/",
+    label: "visit my linkedin page",
   },
   {
     id: 2,
     icon: AiOutlineMail,
     href: "mailto:hui.nathan9@gmail.com",
+    label: "send me an email",
   },
   {
     id: 3,
     icon: AiFillGithub,
     href: "https://github.com/nhui98",
+    label: "visit my github page",
   },
 ];
 

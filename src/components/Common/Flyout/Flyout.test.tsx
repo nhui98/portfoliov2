@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 import Flyout from "./Flyout";
 
-describe("Navbar", () => {
+describe("Flyout", () => {
   const closeFlyout = jest.fn();
 
   it("contains correct number of links", () => {

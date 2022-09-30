@@ -8,15 +8,17 @@ const Sidebar = () => (
   <FadeSection>
     <div className={s.sidebar}>
       <div className={s.line} />
-      <div className={s.socials}>
-        {SOCIAL_LINKS.map(({ href, icon: Icon, id }) => (
-          <Link href={href} passHref key={id}>
-            <a className={s.social} target="_blank" rel="noopener noreferrer">
-              <Icon />
-            </a>
-          </Link>
+      <ul className={s.socials}>
+        {SOCIAL_LINKS.map(({ href, icon: Icon, id, label }) => (
+          <li className={s.social} key={id}>
+            <Link href={href} passHref>
+              <a target="_blank" rel="noopener noreferrer" aria-label={label}>
+                <Icon />
+              </a>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
       <div className={s.line} />
     </div>
   </FadeSection>
