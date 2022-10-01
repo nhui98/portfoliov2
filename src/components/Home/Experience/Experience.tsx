@@ -21,6 +21,7 @@ const Experience = () => {
                 key={id}
                 className={`${s.company} ${active === id && s.active}`}
                 onClick={() => setActive(id)}
+                aria-label="company"
               >
                 {company}
               </li>
@@ -34,11 +35,15 @@ const Experience = () => {
                   key={id}
                   className={`${s.item} ${active === id && s.active}`}
                 >
-                  <h2 className={s.position}>{position}</h2>
+                  <h3 className={s.position}>{position}</h3>
                   <div className={s.date}>{date}</div>
                   <ul className={s.responsibilities}>
                     {responsibilities.map((responsibility, i) => (
-                      <li key={i} className={s.responsibility}>
+                      <li
+                        key={i}
+                        className={s.responsibility}
+                        aria-label="responsiblity"
+                      >
                         <span>
                           <TbCircleDotted />
                         </span>
