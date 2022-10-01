@@ -1,12 +1,11 @@
 import { COMPANY_EXPERIENCE } from "@constants/data";
-import { logRoles, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import Experience from "./Experience";
 
 describe("Experience", () => {
   it("contains a header", () => {
-    const { container } = render(<Experience />);
-    logRoles(container);
+    render(<Experience />);
     const header = screen.getByRole("heading", { level: 2 });
     expect(header).toBeInTheDocument();
   });
