@@ -6,13 +6,13 @@ import s from "./Contact.module.scss";
 const Contact = () => (
   <section className={s.contact} id="contact">
     <FadeSection direction="up" delay=".25s">
-      <h1 className={s.title}>
+      <h2 className={s.title}>
         <span className={s.counter}>04.</span>
         Contact me
-      </h1>
+      </h2>
     </FadeSection>
     <FadeSection direction="up" delay=".4s">
-      <h2 className={s.subtitle}>Lets get in touch</h2>
+      <h3 className={s.subtitle}>Lets get in touch</h3>
     </FadeSection>
     <FadeSection direction="up" delay=".55s">
       <p className={s.description}>

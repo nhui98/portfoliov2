@@ -1,12 +1,11 @@
 import { OTHER_PROJECTS } from "@constants/data";
-import { logRoles, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import OtherProjects from "./OtherProjects";
 
 describe("Other Projects", () => {
   it("displays the correct number of projects", () => {
-    const { container } = render(<OtherProjects />);
-    logRoles(container);
+    render(<OtherProjects />);
 
     const projects = screen.getAllByRole("list", { name: /project/ });
     expect(projects).toHaveLength(OTHER_PROJECTS.length);
